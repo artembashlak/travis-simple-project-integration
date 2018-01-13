@@ -13,6 +13,13 @@
       "username": "Daniel",
       "email": "daniel@example.com",
       "password": "$2a$10$lNguK/NdoH0yzcsWRWxtfeaW82P3Pau7e4C.ZLEza2aElkxdlk0le"
+    },
+    {
+      "name": "cat",
+      "username": "cat",
+      "email": "cat@example.com",
+      "password": "$2a$10$yizKfztgXbmhwpcBG33g3.mORjqudOSCAa0th/bJutWflQHYKQPle",
+      "id": 3
     }
   ]
 }
