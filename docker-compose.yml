@@ -1,0 +1,31 @@
+version: '3'
+services:
+  selenoid:
+    image: "aerokube/selenoid:latest-release"
+    networks:
+      - react
+    ports:
+      - "4444:4444"
+    volumes:
+      - "$PWD:/etc/selenoid/"
+      - "$PWD:/output"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      - "OVERRIDE_VIDEO_OUTPUT_DIR=$PWD"
+    command:  ["-limit", "6", "-conf", "/etc/selenoid/browsers.json", "-video-output-dir", "/output"]
+  selenoid-ui:
+    image: "aerokube/selenoid-ui:latest-release"
+    networks:
+      - react
+    ports:
+      - "8081:8080"
+    command: ["--selenoid-uri", "http://selenoid:4444"]
+  react-app:
+    image: "bashlak/react-simple-app:0.1"
+    networks: 
+      - react
+    ports:
+      - "3000:3000"
+networks: 
+  react:
+    driver: bridge
