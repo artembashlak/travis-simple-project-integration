@@ -22,6 +22,8 @@ services:
     command: ["--selenoid-uri", "http://selenoid:4444"]
   react-app:
     image: "bashlak/react-simple-app:0.1"
+    build:
+      context: ./  
     networks: 
       - react
     ports:
