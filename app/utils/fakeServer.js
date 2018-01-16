@@ -6,7 +6,7 @@ let users;
 const salt = genSaltSync(10);
 const localStorage = global.window.localStorage; // for webpack approval
 const requestURL = 'http://localhost:3000/api/users';
-//http://${process.env.HOST
+// http://${process.env.HOST
 
 console.log('Request url is: ', requestURL);
 

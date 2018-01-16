@@ -5,7 +5,7 @@ node {
       }
 
       stage('Build image') {
-         docker.build("link here:${env.BUILD_ID}")
+         docker.build("bashlak/react-simple-app:${env.BUILD_ID}")
       }
 
       stage("Start services") {
